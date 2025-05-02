@@ -13,6 +13,6 @@ public class Users {
     private Long id;
     @Column
     private String name;
-    @OneToMany(mappedBy = "owner")
+    @OneToMany(mappedBy = "owner",cascade = CascadeType.ALL)
     private List<Groceries> groceriesList;
 }
