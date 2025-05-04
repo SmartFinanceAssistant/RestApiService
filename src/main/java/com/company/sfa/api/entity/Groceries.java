@@ -11,6 +11,6 @@ public class Groceries {
     Long id;
     @ManyToOne
     @JoinColumn(name = "user_id",referencedColumnName = "id")
-    private Users owner;
+    private Person owner;
 
 }
