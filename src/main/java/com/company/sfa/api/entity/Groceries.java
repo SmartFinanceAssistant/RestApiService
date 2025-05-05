@@ -10,7 +10,7 @@ public class Groceries {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
     @ManyToOne
-    @JoinColumn(name = "user_id",referencedColumnName = "id")
+    @JoinColumn(name = "person_id",referencedColumnName = "id")
     private Person owner;
 
 }
