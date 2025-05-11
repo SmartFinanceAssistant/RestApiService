@@ -2,6 +2,7 @@ package com.company.sfa.api.services;
 
 import com.company.sfa.api.DAO.PersonDAO;
 import com.company.sfa.api.DTO.GroceriesDTO;
+import com.company.sfa.api.DTO.PersonDTO;
 import com.company.sfa.api.entity.Groceries;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,9 +24,14 @@ public class PersonService {
 
         return groceriesDTOListConverter(personDAO.getPersonGroceries(personId));
     }
+    @Transactional
+    public String addPerson(PersonDTO personDTO){
+        return personDAO.addPerson(personDTO);
+    }
     public GroceriesDTO groceriesDTOConverter(Groceries groceries){
         GroceriesDTO groceriesDTO = new GroceriesDTO();
         groceriesDTO.setId(groceries.getId());
+        groceriesDTO.setType(groceries.getType());
         return groceriesDTO;
     }
     public List<GroceriesDTO> groceriesDTOListConverter(List<Groceries> groceriesList){
@@ -35,4 +41,5 @@ public class PersonService {
         }
         return groceriesDTOList;
     }
+
 }

@@ -12,5 +12,7 @@ public class Groceries {
     @ManyToOne
     @JoinColumn(name = "person_id",referencedColumnName = "id")
     private Person owner;
+    @Column
+    private String type;
 
 }

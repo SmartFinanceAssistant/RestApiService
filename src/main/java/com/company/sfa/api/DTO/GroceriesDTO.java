@@ -1,13 +1,9 @@
 package com.company.sfa.api.DTO;
 
+import lombok.Data;
+
+@Data
 public class GroceriesDTO {
     private Long id;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
+    private String type;
 }

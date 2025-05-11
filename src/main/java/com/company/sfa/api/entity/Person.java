@@ -13,6 +13,11 @@ public class Person {
     private Long id;
     @Column
     private String name;
+    @Column
+    private String email;
+    @Column
+    private String password;
     @OneToMany(mappedBy = "owner",cascade = CascadeType.ALL)
     private List<Groceries> groceriesList;
+
 }
