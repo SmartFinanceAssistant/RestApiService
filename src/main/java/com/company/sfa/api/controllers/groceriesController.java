@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/persons")
+@RequestMapping("/groceries")
 public class groceriesController {
     private PersonService personService;
     @Autowired
@@ -21,9 +21,5 @@ public class groceriesController {
     @GetMapping("/{id}/groceries")
     public List<GroceriesDTO> getGroceriesByPersonId(@PathVariable("id") Long personId){
         return personService.getPersonGroceries(personId);
-    }
-    @PostMapping("addPerson")
-    public String addPerson(@RequestBody PersonDTO personDTO){
-        return personService.addPerson(personDTO);
     }
 }
