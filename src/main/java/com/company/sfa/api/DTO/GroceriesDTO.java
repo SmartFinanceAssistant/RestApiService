@@ -1,9 +1,10 @@
 package com.company.sfa.api.DTO;
 
+import com.company.sfa.api.entity.Person;
 import lombok.Data;
 
 @Data
 public class GroceriesDTO {
-    private Long id;
     private String type;
+    private Long ownerId;
 }

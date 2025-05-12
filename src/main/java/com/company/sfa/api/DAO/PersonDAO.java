@@ -1,5 +1,6 @@
 package com.company.sfa.api.DAO;
 
+import com.company.sfa.api.DTO.GroceriesDTO;
 import com.company.sfa.api.DTO.PersonDTO;
 import com.company.sfa.api.entity.Groceries;
 import com.company.sfa.api.entity.Person;
@@ -37,6 +38,20 @@ public class PersonDAO {
             return "ERROR";
         }
         return "OK " + person.getId();
+    }
+    public String addGroceriesToPerson(GroceriesDTO groceriesDTO){
+        System.out.println(groceriesDTO.getOwnerId() + groceriesDTO.getType());
+        try {
+            Person owner = entityManager.find(Person.class,groceriesDTO.getOwnerId());
+            Groceries groceries = new Groceries();
+            groceries.setType(groceriesDTO.getType());
+            groceries.setOwner(owner);
+            owner.getGroceriesList().add(groceries);
+            entityManager.persist(groceries);
+            return "OK " + groceries.getId();
+        }catch (Exception e){
+            return "ERROR";
+        }
     }
 
 

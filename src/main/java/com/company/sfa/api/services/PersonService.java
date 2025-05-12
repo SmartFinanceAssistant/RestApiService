@@ -28,9 +28,13 @@ public class PersonService {
     public String addPerson(PersonDTO personDTO){
         return personDAO.addPerson(personDTO);
     }
+    @Transactional
+    public String addGroceriesToPerson(GroceriesDTO groceriesDTO){
+        return personDAO.addGroceriesToPerson(groceriesDTO);
+    }
+
     public GroceriesDTO groceriesDTOConverter(Groceries groceries){
         GroceriesDTO groceriesDTO = new GroceriesDTO();
-        groceriesDTO.setId(groceries.getId());
         groceriesDTO.setType(groceries.getType());
         return groceriesDTO;
     }

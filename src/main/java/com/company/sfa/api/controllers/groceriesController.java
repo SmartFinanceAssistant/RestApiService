@@ -22,4 +22,8 @@ public class groceriesController {
     public List<GroceriesDTO> getGroceriesByPersonId(@PathVariable("id") Long personId){
         return personService.getPersonGroceries(personId);
     }
+    @PostMapping("/addGroceries")
+    public String addGroceries(@RequestBody GroceriesDTO groceriesDTO){
+        return personService.addGroceriesToPerson(groceriesDTO);
+    }
 }

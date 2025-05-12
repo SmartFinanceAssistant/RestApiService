@@ -20,4 +20,5 @@ public class personController {
     public String addPerson(@RequestBody PersonDTO personDTO){
         return personService.addPerson(personDTO);
     }
+    
 }
