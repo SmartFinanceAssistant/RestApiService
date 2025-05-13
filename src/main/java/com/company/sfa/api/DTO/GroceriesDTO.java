@@ -7,4 +7,5 @@ import lombok.Data;
 public class GroceriesDTO {
     private String type;
     private Long ownerId;
+    private String name;
 }

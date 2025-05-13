@@ -46,6 +46,7 @@ public class PersonDAO {
             Groceries groceries = new Groceries();
             groceries.setType(groceriesDTO.getType());
             groceries.setOwner(owner);
+            groceries.setName(groceriesDTO.getName());
             owner.getGroceriesList().add(groceries);
             entityManager.persist(groceries);
             return "OK " + groceries.getId();

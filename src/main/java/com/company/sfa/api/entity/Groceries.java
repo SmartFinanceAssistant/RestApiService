@@ -14,5 +14,7 @@ public class Groceries {
     private Person owner;
     @Column
     private String type;
+    @Column
+    private String name;
 
 }
